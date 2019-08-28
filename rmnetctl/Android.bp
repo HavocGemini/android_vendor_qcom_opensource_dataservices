@@ -1,0 +1,33 @@
+//
+
+cc_binary {
+
+    name: "rmnetcli",
+    vendor: true,
+    sdclang: true,
+    srcs: ["rmnetcli.c"],
+    cflags: ["-Wall","-Werror",],
+    header_libs: ["rmnetctl_headers"],
+    shared_libs: ["librmnetctl"],
+
+}
+
+cc_library_shared {
+
+    name: "librmnetctl",
+    vendor: true,
+    sdclang: true,
+    srcs: ["librmnetctl.c"],
+    cflags: ["-Wall","-Werror"],
+    local_include_dirs: ["."],
+    header_libs: ["generated_kernel_headers","rmnetctl_headers"],
+
+}
+
+cc_library_headers {
+    name: "rmnetctl_headers",
+    vendor: true,
+    export_include_dirs: ["."],
+}
+
+
