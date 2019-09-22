@@ -4,7 +4,6 @@ cc_binary {
 
     name: "datatop",
     vendor: true,
-    sdclang: true,
     srcs: [
         "datatop.c",
         "datatop_cpu_stats_poll.c",
